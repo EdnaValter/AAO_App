@@ -1,0 +1,20 @@
+﻿@import '_Colours.scss';
+@import '_ButtonTemplate.scss';
+
+#Modal{
+    background-color:$BackgroundColour;
+    box-shadow:$DefaultTextColour 0 3px 6px 0.16;
+    display:none;
+    #ModalTitle{
+        font-family:$Raleway;
+    }
+    #ModalContent{
+        font-family:$Asap;
+    }
+
+}
+
+.Display{
+    display:grid!important;
+    width:90%;
+}

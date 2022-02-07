@@ -1,0 +1,97 @@
+﻿@model AAO_App.Models.Driver
+
+@{
+    ViewData["Title"] = "Account";
+    Layout = "_Login";
+
+}
+
+<link rel="stylesheet" href="/css/ModalStyles.css" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+<style>
+    .alert {
+        padding: 20px;
+        background-color: #00904A;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+
+        .alert.success {
+            background-color: #04AA6D;
+        }
+
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .closebtn:hover {
+            color: black;
+        }
+</style>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert success">
+        <span class="closebtn">&times;</span>
+        <strong>Success!</strong> Din Registrering er modtaget!
+    </div>
+
+}
+
+
+
+<img id="Logo" src="../../images/Logo.svg" alt="Company logo" />
+
+<h2 id="FrontPageHeader">Alex Andersen Ølund A/S</h2>
+
+<img id="UserPic" src="../../images/userpic.svg" alt="User image" />
+
+<p id="Viewbag">@ViewBag.error</p>
+
+<form method="POST" asp-controller="Login" asp-action="Index">
+    <label asp-for="Phone">Mobilnummer:</label>
+    <input asp-for="Phone">
+    <label asp-for="Password">Adgangskode:</label>
+    <input asp-for="Password"><br>
+    <input type="Submit" value="Log ind" class="WideButton">
+</form>
+
+<button id="Help" class="ModalTrigger ButtonModal">Help</button>
+
+<div id="Modal">
+    <button onclick="closeHelp()" id="Cross">X</button>
+    <h3 id="ModalTitle"></h3>
+    <p id="ModalContent"></p>
+    <button onclick="closeHelp()" id="CloseButton">Ok</button>
+</div>
+
+<script src="../../js/Modal.js"></script>
+
+<h3 id="CreateAccountHeader">Har du endnu ikke en konto?</h3>
+<a id="CreateAccount" asp-controller="NewDrivers" asp-action="Create">OPRET NY BRUGER</a>
+
+<script>
+    var close = document.getElementsByClassName("closebtn");
+    var i;
+
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.opacity = "0";
+            setTimeout(function () { div.style.display = "none"; }, 600);
+        }
+    }
+</script>

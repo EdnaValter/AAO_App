@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AAO_App.ModelView.MyTrip>
+@using Microsoft.AspNetCore.Http;
+@{
+    Layout = "_Master";
+    ViewData["Title"] = "Trips";
+}
+
+<link rel="stylesheet" href="~/css/TripStyle.css" />
+<script src="~/js/TripJs.js" defer></script>
+<script src="https://kit.fontawesome.com/f8c369dae8.js" crossorigin="anonymous"></script>
+
+<div class="MenuTripContainer">
+    <div onclick="MyTrip()" class="Item MenuTripItem1" id="TripItem1">
+            <p>Mine ture</p>
+        </div>
+</div>
+<div id="line" class="Line"></div>
+
+@foreach (var item in Model)
+{
+    //int thisUserId = Int32.Parse(Context.Session.GetString("DriverId"));
+    ////int RequestStatus = Int32.Parse(Context.Session.GetString("RequestStatus"));
+    //if (thisUserId == item.DriverId)
+    //{
+        <div id="NewTrips" class="NewTrips MyTrips" style="display:none">
+            <div class="TripsHolder">
+                <div id="Date" class="Date">
+                    <div class="Request"> </div>
+                    <p class="RequestText">Afventer <br /> svar</p>
+                    <p class="Number">@item.DateStart.Day</p>
+                    <p id="Month" class="Month">@item.DateStart.Month</p>
+                </div>
+                <div class="Info">
+                    <p class="StartPoint">Afgangsted: @item.City</p>
+                    <p>Start @item.DateStart</p>
+                    <p>Slut @item.DateEnd</p>
+                </div>
+                <div class="Time">
+                    <p>@item.DateEnd - item.DateStart).TotalHours) t</p>
+                </div>
+                <div id="Country" class="Country">
+                    <p class="CType">@item.CountryCode - @item.CountryCode</p>
+                </div>
+            </div>
+            <div id="Info" class="MoreInfo" style="display:none">
+                <div class="TripInformation">
+                    <p><span style="text-decoration:underline">Din tur går til:</span> @item.DeliveryInfo</p>
+                    <p><span style="text-decoration:underline">Besked:</span> @item.Message</p>
+                    <p><span style="text-decoration:underline">Kontakt person:</span> @item.Firstname @item.Lastname</p>
+            @*<p><span style="text-decoration:underline">Afdeling:</span> @item.Contacts.Departments.DepId.ToString()</p>*@
+            </div>
+
+            <div class="Contact">
+                <p><i class="fas fa-phone-alt"></i> @item.Phone</p>
+                <p><i class="fas fa-envelope"></i> @item.Email</p>
+            </div>
+            <button class="Btn">Anmod om tur</button>
+        </div>
+    </div>
+
+    @*}*@
+
+}

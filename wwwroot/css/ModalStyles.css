@@ -1,0 +1,2 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;700&family=Raleway:wght@700&display=swap");.ButtonModal{width:20%}.ButtonModal,.WideButton{background-color:#00904a;border:none;border-radius:.3em;color:#fdfdfd;outline:none;padding:5px 0}.WideButton{width:90%}#Modal{background-color:#fff;box-shadow:0 3px 6px .16 #000;display:none}#Modal #ModalTitle{font-family:Raleway}#Modal #ModalContent{font-family:Asap}.Display{display:-ms-grid!important;display:grid!important;width:90%}
+/*# sourceMappingURL=ModalStyles.css.map */

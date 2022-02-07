@@ -1,0 +1,31 @@
+﻿@model IEnumerable<AAO_App.ModelView.MyTrip>
+@using Microsoft.AspNetCore.Http;
+@{
+    Layout = "_Master";
+    ViewData["Title"] = "Kontakter";
+}
+<div class="contact_container">
+    <div class="headingtext">
+        <h1>Kontakter</h1>
+    </div>
+    <div style="height:100vh">
+        @foreach (var item in Model)
+        {
+
+            int thisUserId = Int32.Parse(Context.Session.GetString("DriverId"));
+            if (thisUserId == item.DriverId) { }
+                <div class="wrapper_contact">
+                    <img src="~/images/userpic.svg" alt="employee image" />
+                    <div class="contact_info">
+
+                        <p>Navn:  @item.Firstname @item.Lastname  </p>
+                        <p>Tlf:  @item.Phone</p>
+                        <p>Email:  @item.Email</p>
+                        <p> Lokation: @item.City @item.Country</p>
+                        <p> Afdeling: @item.DepName </p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,255 @@
+﻿@import '_Colours.scss';
+@import '_ButtonTemplate.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*Top menu*/
+p, label {
+    font-family: $Asap, sans-serif;
+}
+
+
+.MenuTripContainer {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 20px 0 20px;
+}
+
+.Item {
+    width: 38%;
+    border-radius: 5px 5px 0 0;
+}
+
+.Item p {
+    font-weight: 700;
+    font-size: $ContactBoxTextSize;
+    color: $BackgroundColour;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.MenuTripItem1 {
+    background-color: $CTAColourSecond;
+    height: 42px;
+    line-height: 42px;
+}
+
+.MenuTripItem2 {
+    background-color: $CTAColourPrim;
+    height: 46px;
+    line-height: 46px;
+}
+
+.Line {
+    background-color: $CTAColourPrim;
+    height: 4px;
+}
+/*Filter*/
+.Filter {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.Filter p {
+    font-weight: bold;
+    font-size:$ContactBoxTextSize;
+}
+
+.FilterArrow {
+    display: flex;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    margin-left: 12px;
+    margin-bottom: 2px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+
+.FilterContainer p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.FilterItem {
+    width: 50%;
+}
+
+.FilterItem label {
+    display: inline-block;
+    padding: 5px;
+    font-size: $ContactBoxTextSize;
+    width: 80%;
+}
+
+input[type=checkbox] {
+    width: 10%;
+}
+
+/*Ture body*/
+.TripInfoContainer {
+    margin: 0 20px 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Anmod tekst*/
+
+
+/*Tur info*/
+.NewTrips {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+
+    .TripsHolder {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1.1fr 2fr 0.7fr;
+        grid-column: 1/-1;
+        grid-template-rows: 1fr fr;
+        color: $SecondaryTextColour;
+        font-family: $Asap;
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+
+
+        .Date {
+            grid-column: 1/2;
+            background-color: $CTAColourSecond;
+            grid-row: 1/3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border-radius: 0.25em 0 0 0.25em;
+            padding: 5% 0 5% 0;
+            position: relative;
+
+            .Request {
+                //background-color: rgba(0, 0, 0, 0.6);
+                position: absolute;
+                top: 0;
+                border-radius: 0.25em 0 0 0;
+            }
+
+            .Request:after {
+                content: ' ';
+                border-top: 70px solid rgba(0, 0, 0, 0.6);
+                border-right: 115px solid transparent;
+                border-left: 0.25em;
+                width: 0;
+                position: absolute;
+                left: 0;
+              
+            }
+
+
+            .RequestText {
+                position: absolute;
+                transform: rotate(-30deg);
+                text-transform: uppercase;
+                font-weight: 600;
+                top: 13px;
+                font-size: 13px;
+                margin-left: 10px;
+            }
+
+
+            .Month {
+                font-size: $DefaultTextSize;
+                font-weight: normal;
+            }
+
+            .Number {
+                font-size: $UltraBigNumber;
+                font-weight: bold;
+            }
+        }
+
+        .Info {
+            grid-column: 2/3;
+            background-color: $DefaultBoxColour;
+            grid-row: 1/3;
+            color: $DefaultTextColour;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5% 0 5% 5%;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 20px;
+        }
+
+        .Time {
+            grid-column: 3/4;
+            background-color: $CTAColourPrim;
+            grid-row: 1/2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 0 0.25em 0 0;
+            font-size: $ContactBoxTextSize;
+            font-weight: normal;
+        }
+
+        .Country {
+            grid-column: 3/4;
+            background-color: $DetailColour;
+            grid-row: 2/3;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 0 0 0.25em 0;
+            font-size: $ContactBoxTextSize;
+            font-weight: normal;
+        }
+    }
+
+    .MoreInfo {
+        background-color: $DefaultBoxColour;
+        width: 90%;
+        display: grid;
+        border-radius: 0 0 0.25em 0.25em;
+
+        .TripInformation {
+            font-style: italic;
+            padding: 3% 0 3% 10%;
+            line-height: 30px;
+        }
+
+
+        .Contact {
+            text-align: center;
+            line-height: 30px;
+            margin: 0 0 2% 0;
+        }
+
+        .Btn {
+            background-color: $CTAColourPrim;
+            border-style: none;
+            color: $BackgroundColour;
+            border-radius: 5px;
+            padding: 10px 0;
+            font-size: $DefaultTextSize;
+            font-weight: 200;
+        }
+    }
+}

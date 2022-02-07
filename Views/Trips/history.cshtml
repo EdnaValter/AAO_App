@@ -1,0 +1,27 @@
+﻿@model IEnumerable<AAO_App.ModelView.MyTrip>
+@using Microsoft.AspNetCore.Http;
+@{
+    Layout = "_Master";
+    ViewData["Title"] = "DriverHistory";
+}
+
+
+
+<div class="container">
+    <h1>Mine kørte ture</h1>
+
+    @foreach (var item in Model)
+    {
+        int thisUserId = Int32.Parse(Context.Session.GetString("DriverId"));
+        if (item.Status == Status.Approved && thisUserId == item.DriverId)
+     
+        if (item.DateEnd.Date < DateTime.Now)
+        {
+            <div class="item" style="margin: 5px 0">
+                <div class="route">Afg.  @item.City - @item.DateStart.ToString("d'/'M") kl.@item.DateStart.ToString("HH:mm") til @item.DateEnd.ToString("d'/'M") kl.@item.DateStart.ToString("HH:mm")  </div>
+                <div class="code">@item.CountryCode - @item.CountryCode</div>
+                <div class="time">@Html.DisplayFor(modelItem => (item.DateEnd - item.DateStart).TotalHours) t</div>
+            </div>
+        }           
+    }
+</div>

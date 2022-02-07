@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AAO_App.ModelView.MyTrip>
+@using Microsoft.AspNetCore.Http;
+@{
+    Layout = "_Master";
+    ViewData["Title"] = "Notification";
+}
+
+<div class="contact_container">
+    <div class="headingtext">
+        <h1>Notifikationer</h1>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        int thisUserId = Int32.Parse(Context.Session.GetString("DriverId"));
+        if (item.Status == Status.Approved && thisUserId == item.DriverId) { 
+            <div class="message_info">
+                <div class="wrapper_text">
+                    <span>Du har fået denne tur</span>
+                    <span>@DateTime.Now.ToString("HH:mm")</span>
+                </div>
+                <div class="wrapper_message">
+                    <div class="item1">
+                        <p class="item_p"> @item.DateStart.Day</p>
+                        <p id="month"> @item.DateStart.ToString("MMM")</p>
+                    </div>
+                    <div class="item2">
+                        <p class="item_2">
+                            Afg. @item.City - Start @item.DateStart.ToShortTimeString()
+                        </p>
+                    </div>
+                    <div class="item3">
+                        <p class="item_p">@item.CountryCode - @item.CountryCode</p>
+                    </div>
+                    <div class="item4">
+                        <p class="item_p">@Html.DisplayFor(modelItem => (item.DateEnd - item.DateStart).TotalHours) t</p>
+                    </div>
+                </div>
+
+            </div>
+       }
+    }
+</div>

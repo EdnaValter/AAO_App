@@ -1,0 +1,46 @@
+
+$primary-color: #00904a;
+$secondary-color: #eaeaea;
+
+.container {
+
+    .item {
+        height: 2.5rem;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        background-color: $secondary-color;
+        margin: 10px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        width: 100%;
+
+        .route {
+            text-align: left;
+            flex: 1;
+        }
+
+        .code {
+            text-align: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background-color: black;
+            color: $secondary-color;
+            padding: 0 2px;
+        }
+
+        .time {
+            color: $secondary-color;
+            width: 2rem;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            background-color: $primary-color;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding-left: 0.25rem;
+        }
+    }
+}

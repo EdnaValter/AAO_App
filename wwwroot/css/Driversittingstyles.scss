@@ -1,0 +1,88 @@
+@import "config";
+@import "buttons";
+@import "switch";
+@import "utilities";
+@import "routes";
+@import "alert";
+
+h1 {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+
+  p {
+    width: 75%;
+  }
+}
+
+.language {
+  margin-top: 1rem;
+  flex: 1;
+  flex-direction: column;
+
+  input {
+    display: none;
+  }
+
+  img {
+    cursor: pointer;
+    height: 2.1rem;
+    width: 2.1rem;
+    border-radius: 1.05rem;
+    margin-right: 0.6rem;
+  }
+
+  input:checked + img {
+    outline: 0.2rem solid $primary-color;
+  }
+}
+
+.floating-button {
+  position: absolute;
+  bottom: 7rem;
+  left: 1rem;
+  right: 1rem;
+}
+
+.tab {
+  display: flex;
+  height: $footer-height;
+  background-color: $primary-color;
+  position: fixed;
+
+  bottom: 0;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.2rem 2rem;
+
+  .menu {
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 1.7rem;
+      margin: 0;
+    }
+    div {
+      color: white;
+      margin: 0;
+      padding: 0;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+   
+    }
+  }
+}
+.content, .language{
+    padding-left: 30px;
+    padding-top: 20px;
+}

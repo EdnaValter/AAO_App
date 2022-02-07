@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#2196f3" />
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/MasterStyle.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;700&family=Raleway:wght@700&display=swap" />
+    <link href="~/css/Driversittingstyles.css" rel="stylesheet" />
+    <link href="~/css/CalendarStyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="manifest" href="/manifest.json" />
+    @*<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">*@
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/icon192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="manifest" href="images/icons/site.webmanifest">
+    <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        .notification {
+            color: white;
+            text-decoration: none;
+            padding: 15px 26px;
+            position: relative;
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+            .notification .badge {
+                position: absolute;
+                top: -18px;
+                right: 40px;
+                padding: 5px 10px;
+                border-radius: 50%;
+                background: #DC2F34;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    @*Master header*@
+    <header class="header_container">
+        <div class="back_list">
+            <a asp-action="Index" asp-controller="Trips">
+                <i style="font-size:30px" class="fa">&#xf100;</i>
+            </a>
+        </div>
+        <div class="logo_left">
+            <a asp-action="Index" asp-controller="Trips" class="nav-link"><img src="~/images/logo.svg" alt="logo" width="50" height="50" /></a>
+        </div>
+        <nav class="header__nav nav-bar">
+            <div class="toggle-menu">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
+            <div class="logo">
+                <a asp-controller="Homepage" asp-action="Index" class="nav-link"><img src="~/images/logo.svg" alt="logo" /></a>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-list-item"><a asp-controller="RequestedStatus" asp-action="Index" class="nav-link">Rådighedskalender</a></li>
+                <li class="nav-list-item"><a asp-controller="Trips" asp-action="History" class="nav-link">Mine Kørte Ture</a></li>
+                <li class="nav-list-item"><a asp-controller="Contacts" asp-action="Contact" class="nav-link">Kontakter</a></li>
+                <li class="nav-list-item"><a class="nav-link">Intranet</a></li>
+                <li class="nav-list-item logud"><a class="nav-link" asp-controller="Login" asp-action="Logout">Logud</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    @*Master Contents*@
+    <main>
+        @RenderBody()
+    </main>
+    @*Master Footer*@
+    <footer>
+        <div class="footer_item">
+            <a class="footer_wrap" asp-controller="Profile" asp-action="Index">
+                <i class="material-icons" style="font-size:24px;color:white">account_circle</i>
+                <span>Profil</span>
+            </a>
+        </div>
+        <div class="footer_item">
+            <a class="footer_wrap notification" asp-controller="Trips" asp-action="Notification">
+                <i class="material-icons" style="font-size:24px;color:white">notifications</i>
+                <span>Notifikation</span>
+                <span class="badge">1</span>
+            </a>
+        </div>
+        <div class="footer_item">
+            <a class="footer_wrap" asp-controller="Profile" asp-action="Setting">
+                <i class="material-icons" style="font-size:24px;color:white">settings</i>
+                <span>Indstillinger</span>
+            </a>
+        </div>
+    </footer>
+
+    <script asp-append-version="true">
+        //Menu Javascript here
+
+        var toggleButton = document.querySelector('.toggle-menu');
+        var navBar = document.querySelector('.nav-bar');
+        var menuClosed = true;
+        toggleButton.addEventListener('click', function () {
+            if (menuClosed) {
+                navBar.classList.toggle('toggle');
+                document.querySelector('main').style.display = "none";
+                document.querySelector('footer').style.display = "none";
+                document.getElementsByClassName('logo_left')[0].style.display = 'none';
+                menuClosed = false;
+            } else {
+                navBar.classList.toggle('toggle');
+                document.querySelector('main').style.display = "grid";
+                document.querySelector('footer').style.display = "flex";
+                document.getElementsByClassName('logo_left')[0].style.display = 'block';
+                menuClosed = true;
+            }
+        });
+
+
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('/serviceworker.js')
+                .then(function () { console.log('Service Worker Registered'); });
+        }
+    </script></body>
+@RenderSection("Scripts", required: false)
+</html>

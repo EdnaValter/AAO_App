@@ -1,0 +1,218 @@
+﻿@import '_ButtonTemplate.scss';
+@import '_Colours.scss';
+
+/*body {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;*/
+
+main {
+    display: grid;
+    grid-column: 1/-1;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 500px;
+    width: 100%;
+    font-family: 'asap';
+
+        #Icon {
+            width: 18%;
+            margin: 20px 0 26px 0;
+        }
+
+        #WelcomeMessage {
+            display: grid;
+            width: 100%;
+            grid-column: 1/-1;
+            grid-template-columns: 1fr 4fr;
+
+
+            h3 {
+                grid-column: 2/3;
+                grid-row: 1;
+                align-self: center;
+                margin-left: 5%;
+                font-size: 25px;
+            }
+
+            img {
+                width: 65%;
+                justify-self: end;
+                grid-column: 1/2;
+                grid-row: 1;
+            }
+        }
+
+        #NewestTrips {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 22px;
+            flex-wrap: wrap;
+
+            h3 {
+                font-size: 29px;
+                margin-bottom: 11px;
+            }
+
+            .TripsHolder {
+                width: 90%;
+                display: grid;
+                grid-template-columns: 1.1fr 2fr 0.7fr;
+                grid-column: 1/-1;
+                grid-template-rows: 1fr fr;
+                color: $SecondaryTextColour;
+                font-family: 'asap';
+                margin: 0 0 12px 0;
+
+                .Date {
+                    grid-column: 1/2;
+                    background-color: $CTAColourSecond;
+                    grid-row: 1/3;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    border-radius: 0.25em 0 0 0.25em;
+                    padding: 5% 0 5% 0;
+
+                    .Month {
+                        font-size: 20px;
+                        font-weight: normal;
+                    }
+
+                    .Number {
+                        font-size: 40px;
+                        font-weight: bold;
+                    }
+                }
+
+                .Info {
+                    grid-column: 2/3;
+                    background-color: $DefaultBoxColour;
+                    grid-row: 1/3;
+                    color: $DefaultTextColour;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 5% 0 5% 5%;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                .Time {
+                    grid-column: 3/4;
+                    background-color: $CTAColourPrim;
+                    grid-row: 1/2;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    border-radius: 0 0.25em 0 0;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                .Country {
+                    grid-column: 3/4;
+                    background-color: $DetailColour;
+                    grid-row: 2/3;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    border-radius: 0 0 0.25em 0;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+            }
+        }
+
+
+        #MyTrip {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 28px;
+            flex-wrap: wrap;
+
+            h3 {
+                font-size: 29px;
+                margin-bottom: 11px;
+            }
+
+            .TripsHolder {
+                width: 90%;
+                display: grid;
+                grid-template-columns: 1.1fr 2fr 0.7fr;
+                grid-column: 1/-1;
+                grid-template-rows: 1fr fr;
+                color: $SecondaryTextColour;
+                font-family: 'asap';
+                margin: 0 0 12px 0;
+
+                .Date {
+                    grid-column: 1/2;
+                    background-color: $CTAColourSecond;
+                    grid-row: 1/3;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    border-radius: 0.25em 0 0 0.25em;
+                    padding: 5% 0 5% 0;
+
+                    .Month {
+                        font-size: 20px;
+                        font-weight: normal;
+                    }
+
+                    .Number {
+                        font-size: 40px;
+                        font-weight: bold;
+                    }
+                }
+
+                .Info {
+                    grid-column: 2/3;
+                    background-color: $DefaultBoxColour;
+                    grid-row: 1/3;
+                    color: $DefaultTextColour;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 5% 0 5% 5%;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                .Time {
+                    grid-column: 3/4;
+                    background-color: $CTAColourPrim;
+                    grid-row: 1/2;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    border-radius: 0 0.25em 0 0;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                .Country {
+                    grid-column: 3/4;
+                    background-color: $DetailColour;
+                    grid-row: 2/3;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    border-radius: 0 0 0.25em 0;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+
+

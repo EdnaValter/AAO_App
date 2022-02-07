@@ -1,0 +1,43 @@
+﻿@model AAO_App.Models.Driver
+@{
+    ViewData["Title"] = "Settings";
+    Layout = "_Master";
+}
+
+<div class="container_setting">
+    <h1>Indstillinger</h1>
+    <div class="content">
+        <h3>Notifikationer</h3>
+        <div class="row">
+            <p class="notification-text">
+                Slå push beskeder til, hvis du
+                vil have besked, når der sker
+                noget i appen.
+            </p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div class="content">
+        <h3>Standard sprog</h3>
+        <div class="row">
+            <p>
+                Vælg hvilket sprog der skal
+                være dit standard sprog
+            </p>
+        </div>
+    </div>
+    <div class="language">
+        <label> <input type="radio" name="language"> <img src="~/images/uk-flag.png" alt="english"></label>
+        <label> <input type="radio" name="language"> <img src="~/images/DK-Denmark-Flag-icon.png" alt="english"></label>
+    </div>
+    <br />  <br />
+
+    <center><input style="background:#DC2F34" class="btn btn-danger" onclick="document.getElementById('btnDelete').style.display = 'block'; color: 'red'; width: '100%'" value="Slet Profil" /></center>
+    <form asp-action="Delete">
+        <button type="submit" class="btn btn-danger" id="btnDelete" style="display:none; width: 100% ">Bekræft Slet Profil</button>
+    </form>
+</div>
+

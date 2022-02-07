@@ -1,0 +1,407 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;700&family=Raleway:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;700&family=Raleway:wght@700&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+.ButtonModal {
+    width: 20%;
+    background-color: #00904A;
+    color: #FDFDFD;
+    padding: 5px 0;
+    outline: none;
+    border: none;
+    border-radius: 0.3em;
+    margin-top: 50px;
+}
+
+.WideButton {
+    background-color: #00904A;
+    color: #FDFDFD;
+    padding: 5px 0;
+    outline: none;
+    border: none;
+    border-radius: 0.3em;
+    width: 90%;
+    margin-top: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 8%;
+    background-image: url("../../images/bkgfrontpage.svg");
+    background-size: 110%;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+    body main {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        max-width: 500px;
+        grid-column: 1/-1;
+        justify-self: center;
+    }
+
+        body main #DotHolder {
+            width: 30%;
+            max-width: 100px;
+            display: flex;
+            justify-self: center;
+            justify-content: space-evenly;
+        }
+
+        body main img {
+            width: 20%;
+            margin: 33px 0 24px 0;
+        }
+
+        body main .Dot {
+            outline: none;
+            width: 10px;
+            height: 10px;
+            border: 1.5px solid #313131;
+            border-radius: 100%;
+            padding: 0;
+            background-color: #FFFFFF;
+        }
+
+        body main .ActiveDot {
+            background-color: #005140;
+            border: none;
+        }
+
+        body main form {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-column: 1/-1;
+            justify-items: center;
+        }
+
+            body main form label {
+                justify-self: start;
+                margin-bottom: 1px;
+                font-size: 20px;
+                font-family: "Raleway";
+            }
+
+            body main form .Formula {
+                display: none;
+            }
+
+                body main form .Formula .ButtonContainer {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+
+                body main form .Formula #SecondContainer {
+                    justify-content: space-between;
+                }
+
+                body main form .Formula #ThirdContainer {
+                    justify-content: start;
+                }
+
+            body main form .Displayed {
+                display: block;
+            }
+
+            body main form input, body main form select {
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 21px;
+                padding: 6px 0;
+                border: solid 2px #005140;
+                border-radius: 0.4em;
+                text-indent: 5px;
+            }
+
+            body main form .WideButton {
+                width: 100%;
+                padding: 11px 0;
+                margin-bottom: 18px;
+                font-size: 20px;
+                font-family: "Asap";
+                font-weight: normal;
+            }
+
+input[type="checkbox"] {
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+}
+
+.form-control + .form-control {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/*TRIPSTYLE*/
+
+.MenuTripContainer {
+    align-items: flex-end;
+    display: flex;
+    margin: 0 20px
+}
+
+.Item {
+    border-radius: 5px 5px 0 0;
+    width: 38%
+}
+
+    .Item p {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        vertical-align: middle
+    }
+
+.MenuTripItem1 {
+    background-color: #005140;
+    height: 42px;
+    line-height: 42px
+}
+
+.MenuTripItem2 {
+    height: 46px;
+    line-height: 46px
+}
+
+.Line, .MenuTripItem2 {
+    background-color: #00904a
+}
+
+.Line {
+    height: 4px
+}
+
+.Filter {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    width: 100%
+}
+
+    .Filter p {
+        font-size: 14px;
+        font-weight: 700
+    }
+
+.FilterArrow {
+    display: flex
+}
+
+.arrow {
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    margin-bottom: 2px;
+    margin-left: 12px;
+    padding: 5px
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg)
+}
+
+.FilterContainer p {
+    font-weight: 700;
+    margin-bottom: 10px
+}
+
+.FilterItem {
+    width: 50%
+}
+
+    .FilterItem label {
+        display: inline-block;
+        font-size: 14px;
+        padding: 5px;
+        width: 80%
+    }
+/*
+input[type=checkbox] {
+    width: 10%
+}*/
+
+.TripInfoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 20px
+}
+
+.NewTrips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%
+}
+
+    .NewTrips .TripsHolder {
+        -ms-grid-columns: 1.1fr 2fr .7fr;
+        -ms-grid-rows: 1fr fr;
+        box-shadow: 0 0 10px 1px rgba(0,0,0,.2);
+        color: #fdfdfd;
+        display: -ms-grid;
+        display: grid;
+        font-family: Asap;
+        grid-column: 1/-1;
+        grid-template-columns: 1.1fr 2fr .7fr;
+        grid-template-rows: 1fr fr;
+        width: 90%
+    }
+
+        .NewTrips .TripsHolder .Date {
+            -ms-grid-column-span: 1;
+            -ms-grid-row-span: 2;
+            background-color: #005140;
+            border-radius: .25em 0 0 .25em;
+            display: flex;
+            flex-direction: column;
+            -ms-grid-column: 1;
+            grid-column: 1/2;
+            -ms-grid-row: 1;
+            grid-row: 1/3;
+            justify-content: center;
+            padding: 5% 0;
+            position: relative;
+            text-align: center
+        }
+
+            .NewTrips .TripsHolder .Date .Request {
+                border-radius: .25em 0 0 0;
+                position: absolute;
+                top: 0
+            }
+
+                .NewTrips .TripsHolder .Date .Request:after {
+                    border-left: .25em;
+                    border-right: 115px solid transparent;
+                    border-top: 70px solid rgba(0,0,0,.6);
+                    content: " ";
+                    left: 0;
+                    position: absolute;
+                    width: 0
+                }
+
+            .NewTrips .TripsHolder .Date .RequestText {
+                font-size: 13px;
+                font-weight: 600;
+                margin-left: 10px;
+                position: absolute;
+                text-transform: uppercase;
+                top: 13px;
+                transform: rotate(-30deg)
+            }
+
+            .NewTrips .TripsHolder .Date .Month {
+                font-size: 20px;
+                font-weight: 400
+            }
+
+            .NewTrips .TripsHolder .Date .Number {
+                font-size: 40px;
+                font-weight: 700
+            }
+
+        .NewTrips .TripsHolder .Info {
+            -ms-grid-column-span: 1;
+            -ms-grid-row-span: 2;
+            background-color: #eaeaea;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            font-weight: 400;
+            -ms-grid-column: 2;
+            grid-column: 2/3;
+            -ms-grid-row: 1;
+            grid-row: 1/3;
+            justify-content: center;
+            line-height: 20px;
+            padding: 5% 0 5% 5%
+        }
+
+        .NewTrips .TripsHolder .Time {
+            -ms-grid-column-span: 1;
+            -ms-grid-row-span: 1;
+            background-color: #00904a;
+            border-radius: 0 .25em 0 0;
+            grid-column: 3/4;
+            -ms-grid-row: 1;
+            grid-row: 1/2
+        }
+
+        .NewTrips .TripsHolder .Country, .NewTrips .TripsHolder .Time {
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            font-weight: 400;
+            -ms-grid-column: 3;
+            justify-content: center;
+            text-align: center
+        }
+
+        .NewTrips .TripsHolder .Country {
+            -ms-grid-column-span: 1;
+            -ms-grid-row-span: 1;
+            background-color: #313131;
+            border-radius: 0 0 .25em 0;
+            grid-column: 3/4;
+            -ms-grid-row: 2;
+            grid-row: 2/3
+        }
+
+    .NewTrips .MoreInfo {
+        background-color: #eaeaea;
+        border-radius: 0 0 .25em .25em;
+        display: -ms-grid;
+        display: grid;
+        width: 90%
+    }
+
+        .NewTrips .MoreInfo .TripInformation {
+            font-style: italic;
+            line-height: 30px;
+            padding: 3% 0 3% 10%
+        }
+
+        .NewTrips .MoreInfo .Contact {
+            line-height: 30px;
+            margin: 0 0 2%;
+            text-align: center
+        }
+
+        .NewTrips .MoreInfo .Btn {
+            background-color: #00904a;
+            border-radius: 5px;
+            border-style: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 200;
+            margin: 0 20px 10px;
+            padding: 10px 0
+        }
+/*# sourceMappingURL=TripStyle.css.map */
+

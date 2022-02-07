@@ -1,0 +1,450 @@
+﻿@import "_Colours.scss";
+@import "_ButtonTemplate.scss";
+
+.calendar_container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+
+    .headingtext {
+        margin-bottom: 20px;
+
+        .headingtext h1 {
+            font-size: $HeadlineTextSize;
+        }
+    }
+
+    .type {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 20px;
+
+        button {
+            width: 50px;
+            height: 15px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .leftred {
+            display: flex;
+            font-size: $ContactBoxTextSize;
+
+            .red {
+                display: flex;
+                justify-content: flex-start;
+                background: $DangerColour;
+            }
+        }
+
+        .rightgreen {
+            display: flex;
+            font-size: $ContactBoxTextSize;
+
+            .green {
+                display: flex;
+                justify-content: flex-end;
+                background: $CTAColourPrim;
+            }
+        }
+    }
+
+    .calendar {
+        width: 100%;
+        height: auto;
+        box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    }
+}
+
+.create {
+    font-size: 16px;
+}
+
+.create a {
+    text-decoration: none;
+    color: #000;
+}
+
+.month {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    background: lightgray;
+}
+
+.prev-date,
+.next-date {
+    opacity: 0.2;
+}
+
+.weekdays {
+    width: 100%;
+    height: 50px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.weekdays div {
+    font-size: $ContactBoxTextSize;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(40.0rem / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.days div {
+    width: 40px;
+    margin: 0px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.1s;
+}
+
+.days div:hover:not(.today) {
+    background-color: $CTAColourSecond;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.today {
+    background-color: lightgray;
+    border-radius: 30px;
+}
+.days .lists {
+    background-color: $CTAColourPrim;
+    border-radius: 30px;
+}
+
+.days .listsred {
+    background-color: $DangerColour;
+    border-radius: 30px;
+}
+
+.red {
+    background-color: $DangerColour;
+    border-radius: 30px;
+}
+.month i {
+    font-size: $DefaultTextSize;
+    cursor: pointer;
+    color: #000;
+}
+
+.date h2 {
+}
+
+.month .date p {
+    font-size: $ContactBoxTextSize;
+    font-weight: lighter;
+}
+
+/*Responsive table Driver*/
+#table{
+    margin-top: 20px;
+    height: 100vh;
+}
+.table_container {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    height: 17vh;
+    margin-bottom: 100px;
+    overflow-x: visible;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #f3f3f3;
+}
+
+td, th {
+    padding: 8px;
+    text-align: left;
+}
+/* Zebra striping */
+.avl1 {
+    background: $DangerColour;
+    border-bottom: 1px solid $BackgroundColour;
+}
+/* Zebra striping */
+.avl0 {
+    background: $CTAColourPrim;
+    border-bottom: 1px solid $BackgroundColour;
+}
+
+thead {
+    height: 50px;
+
+    th {
+        background: $DefaultBoxColour;
+        font-weight: bold;
+        color: $DefaultTextColour;
+    }
+}
+
+tbody {
+    tr {
+        overflow-y: auto;
+       
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    td a:nth-child(2) {
+        color: #000;
+    }
+
+    td a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+/*CRUD STYLING*/
+
+form {
+    background: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: $CTATextSize;
+    color: #000;
+}
+
+input[class="form-control"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: solid 2px $CTAColourSecond;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    /*border: 1px solid #ccc;*/
+    border: solid 2px $CTAColourSecond;
+    border-radius: 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+input[type=submit] {
+    width: 100%;
+/*    background-color: $CTAColourPrim;*/
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+button:hover {
+    background: $CTAColourSecond;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+.row1{
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+/*CREATE*/
+/* Hide the browser's default radio button */
+.btnradio{
+    display: flex;
+    justify-content: space-between;
+}
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+input .rad{
+    width: 100px;
+    height: 50px;
+    border-radius: 30px;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container_radio:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container_radio input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container_radio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container_radio .checkmark:after {
+    top: 15px;
+    left: 15px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+}
+
+//Kontakter Styling
+.contact_container, .message_container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wrapper_contact {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    background-color: $DefaultBoxColour;
+    border-radius: 10px;
+    margin-top: 25px;
+    padding: 10px 10px;
+}
+
+.contact_info {
+    text-align: left;
+    letter-spacing: 1px;
+    margin-left:10px;
+    margin-top: 10px;
+}
+/*Message styling*/
+.wrapper_text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.message_info {
+    text-align: center;
+    padding: 12px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.wrapper_message {
+    display: flex;
+    justify-content: space-between;
+    line-height: 70px;
+    height: 70px;
+}
+
+.item1 {
+    width: 16%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: $CTAColourSecond;
+    color: $BackgroundColour;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.item2 {
+    width: 60%;
+    background-color: $DefaultBoxColour;
+}
+.item2 .item_2{
+ font-size: 14px;
+}
+
+.item3 {
+    width: 16%;
+    background-color: $DefaultTextColour;
+    color: $BackgroundColour;
+}
+
+.item4 {
+    background-color: $CTAColourPrim;
+    width: 12%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+}
+
+.item_p {
+    font-size: $ContactBoxTextSize;
+}
+#Month{
+    font-size: $ContactBoxTextSize;
+}

@@ -1,0 +1,27 @@
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  border-width: 0;
+  padding: 8px 20px;
+  margin: 3px;
+
+  &:hover {
+    transform: scale(0.98);
+  }
+}
+
+.btn-danger {
+  @extend %btn;
+  background-color: $danger-color;
+  color: white;
+}
+
+.btn-success {
+  @extend %btn;
+  background-color: $primary-color;
+  color: white;
+}
+
+.btn-width-100 {
+  width: calc(100% - 2rem);
+}

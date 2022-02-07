@@ -1,0 +1,115 @@
+﻿@import '_Colours.scss';
+@import '_ButtonTemplate.scss';
+
+h1,h2,h3,h4,h5,h6{
+    padding:0;
+    margin:0;
+}
+
+body {
+    margin: 0;
+    padding: 0 8%;
+    background-image: url("../../images/bkgfrontpage.svg");
+    background-size: 110%;
+    background-position: top;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    main {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        max-width: 500px;
+        grid-column: 1/-1;
+        justify-self: center;
+
+        #CreateAccountHeader {
+            color: $DefaultTextColour;
+            font-size: 20px;
+            font-family: 'Raleway';
+            font-weight: bold;
+        }
+
+        #CreateAccount {
+            color: $CTAColourPrim;
+            text-decoration: none;
+            font-size: 25px;
+            font-family: 'Asap';
+            font-weight: bold;
+            margin-bottom: 85px;
+        }
+
+        #UserPic {
+            width: 26.56%;
+            margin: 40px 0 18px 0;
+        }
+
+        #Logo {
+            width: 39%;
+            margin: 47px 0 32px 0;
+        }
+
+        #FrontPageHeader {
+            color: $CTAColourSecond;
+            font-size: 29px;
+            font-family: 'Asap';
+            font-weight: bold;
+        }
+
+        #Viewbag{
+            color:$DangerColour;
+            font-family:"Raleway";
+            font-weight:normal;
+            margin:0 0 10px 0;
+        }
+
+        .ButtonModal {
+            background-color: $DetailColour;
+            justify-self: start;
+            padding: 11px 0;
+            width: 36%;
+            font-size: 20px;
+            font-family: 'Asap';
+            font-weight: normal;
+            margin-bottom: 70px;
+            box-shadow: rgba ($DefaultTextColour,16%) 0 3px 6px;
+        }
+
+        form {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-column: 1/-1;
+            justify-items: center;
+
+            input {
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 21px;
+                padding: 6px 0;
+                border: solid 2px $CTAColourSecond;
+                border-radius: 0.4em;
+                text-indent: 5px;
+            }
+
+            label {
+                justify-self: start;
+                margin-bottom: 1px;
+                font-size: 20px;
+                font-family: 'Raleway';
+            }
+
+            .WideButton {
+                width: 100%;
+                padding: 11px 0;
+                box-shadow: rgba ($DefaultTextColour,16%) 0 3px 6px;
+                margin-bottom: 18px;
+                font-size: 20px;
+                font-family: 'Asap';
+                font-weight: normal;
+            }
+        }
+    }
+}

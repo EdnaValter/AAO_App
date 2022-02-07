@@ -1,0 +1,21 @@
+$light-color: #f4f4f4;
+$font-stack: Arial, Helvetica, sans-serif;
+$primary-color: #00904a;
+$secondary-color: #eaeaea;
+$danger-color: #dc2f34;
+$navbar-height: 4rem;
+$footer-height: 3.5rem;
+// set text color based on background
+// @function set-text-color($color) {
+//   @if (lightness($color) > 70) {
+//     @return #333;
+//   } @else {
+//     @return white;
+//   }
+// }
+
+// // set background and text color
+// @mixin set-background($color) {
+//   background-color: $color;
+//   color: set-text-color($color);
+// }

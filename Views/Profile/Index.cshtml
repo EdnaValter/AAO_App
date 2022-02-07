@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AAO_App.ModelView.ProfileModelView>
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "_Master";
+}
+
+<link href="~/css/Profile.css" rel="stylesheet" type="text/css" />
+
+
+<h1 id="Profil">Profil</h1>
+<div class="wrap_around">
+    <img id="UserPic" src="../../../images/userpic.svg" alt="ProfilePic" />
+</div>
+<div style="height:100vh">
+    
+    @foreach (var item in Model)
+    {
+
+        //int thisUserId = Int32.Parse(Context.Session.GetString("DriverId"));
+    <div id="TextBody">
+        <div class="wrap_around">
+            <h2 class="ProfileSpace" id="Stamdata">Stamdata</h2>
+            <p>
+                <a class="edit_icon" asp-action="Edit" asp-route-id="@item.DriverId"><i style="font-size:24px" class="fa">&#xf040;</i></a>
+            </p>
+        </div>
+        <div class="ProfileSpace" id="ProfName">Navn:  @item.Firstname @item.Lastname </div>
+        <div class="ProfileSpace" id="ProfAddress"> Addresse:  @item.Addresse </div>
+        <div class="ProfileSpace" id="ProfAddress"> City:  @item.City </div>
+        <div class="ProfileSpace" id="ProfAddress"> Bithday:  @item.DoB.ToShortDateString() </div>
+        <div class="ProfileSpace" id="ProfAddress"> alder:  @((@DateTime.Now - item.DoB).Days) </div>
+        <div class="ProfileSpace" id="ProfKørekort" style="font-weight:bold"> Kørekort oplysninger: </div>
+        <div class="ProfileSpace" id="ProfKørekort" @item.License>Førekort &#9989;</div>
+        <div class="ProfileSpace" id="ProfKørekort" @item.License>EUKvalifikationer &#9989;</div>
+        <div class="wrap_around">
+            <h2 class="ProfileSpace" id="ProfPreferencer">Dine præferencer</h2>
+            @*<p>
+                <a asp-action="Edit" asp-route-id="@item.DriverId"><i style="font-size:24px" class="fa">&#xf040;</i></a>
+            </p>*@
+        </div>
+        <div class="ProfileSpace" id="ProfLokation"> Location: @item.City </div>
+        <div class="ProfileSpace" id="ProfLokation" @item.CountryCode> Type: International  </div>
+    </div>
+
+    }
+
+
+    </div>
